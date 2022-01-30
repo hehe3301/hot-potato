@@ -1,0 +1,14 @@
+services:
+  hot-potato:
+    image: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - public-data:/usr/share/nginx/html
+
+volumes:
+  public-data:
+    driver_opts:
+      type: none
+      device: /data/public
+      o: bind
